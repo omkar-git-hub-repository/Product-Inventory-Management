@@ -23,7 +23,7 @@
 		<property name="hibernate.hbm2ddl.auto">update</property>
 
 		<mapping class="com.practise.Entity.Products"/>
-	 
+		<mapping class="com.practise.Entity.ProductDetails"/>
 
 	</session-factory>
 </hibernate-configuration>

@@ -1,19 +1,40 @@
 package com.practise.Entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 
 @Entity
 
 public class Products {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private double price;
     private int quantity;
     private String manufacturer;
 
+
+    @OneToOne(cascade =  CascadeType.ALL)
+    @JoinColumn(name = "productdetails_id" , referencedColumnName = "id")
+
+    private ProductDetails productDetails;
+
+
+
+
+    public ProductDetails getProductDetails() {
+        return productDetails;
+    }
+    public void setProductDetails(ProductDetails productDetails) {
+        this.productDetails = productDetails;
+    }
 
     public int getId() {
         return id;

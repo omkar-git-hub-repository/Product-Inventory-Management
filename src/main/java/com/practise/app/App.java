@@ -14,7 +14,8 @@ public class App {
                 "\n2. View all Products" +
                 "\n3. Update quantity" +
                 "\n4. Delete Product by ID" +
-                "\n5. Exit");
+                "\n5. Set Product Details" +
+                "\n6. Exit");
 
         Scanner scanner = new Scanner(System.in);
         int choice = scanner.nextInt();
@@ -40,10 +41,19 @@ public class App {
                 DeleteByID deleteByID = new DeleteByID();
                 deleteByID.deleteProductById();
                 break;
+        
             case 5:
-                System.out.println("Exiting...");
-                System.exit(0);
+                // Set Product Details
+                SetProductDetails setProductDetails = new SetProductDetails();
+                setProductDetails.setProductDetails();
                 break;
+
+            case 6:
+                // Exit
+                System.out.println("Exiting the application. Goodbye!");
+                scanner.close();
+                return;
+                
             default:
                 System.out.println("Invalid choice. Please try again.");
         }

@@ -37,6 +37,8 @@ public class App {
                 break;
             case 4:
                 // Delete Product by ID
+                DeleteByID deleteByID = new DeleteByID();
+                deleteByID.deleteProductById();
                 break;
             case 5:
                 System.out.println("Exiting...");
